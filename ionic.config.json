@@ -1,0 +1,7 @@
+{
+  "name": "login-lazy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
