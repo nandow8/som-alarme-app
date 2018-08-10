@@ -6,6 +6,12 @@ import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ClienteProvider } from '../providers/cliente/cliente';
+import { ProdutoProvider } from '../providers/produto/produto';
+import { OrcamentoProvider } from '../providers/orcamento/orcamento';
+import { VendaProvider } from '../providers/venda/venda';
+import {  HttpClientModule, HttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -22,7 +29,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HttpClient,
+    ClienteProvider,
+    ProdutoProvider,
+    OrcamentoProvider,
+    VendaProvider
   ]
 })
 export class AppModule {}

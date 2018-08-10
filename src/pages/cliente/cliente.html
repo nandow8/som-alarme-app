@@ -6,13 +6,28 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>cliente</ion-title>
+  <ion-navbar color="lightcoral-menu"  hideBackButton>
+      <ion-title style="text-align: center;">Clientes</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list *ngFor="let cliente of clientes">
+    
+    <ion-card>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/clientes.png">
+        </ion-avatar>
+        <h2>{{cliente.nome}}</h2>
+        <p>Telefone: {{cliente.telefone}}</p>
+      </ion-item>
+    </ion-card>
+    
+  </ion-list>
+ 
 
 </ion-content>

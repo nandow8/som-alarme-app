@@ -1,25 +1,29 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ClienteProvider } from '../../providers/cliente/cliente';
 
-/**
- * Generated class for the ClientePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
   selector: 'page-cliente',
   templateUrl: 'cliente.html',
+  providers: [ClienteProvider]
 })
 export class ClientePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public clientes = [];
+
+  constructor(private clienteProvider: ClienteProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.clientesListAll();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ClientePage');
+    console.log(this.clientes.length );
   }
 
+  public clientesListAll(){
+    this.clienteProvider.listAll().subscribe(response => this.clientes = response);
+  }
+
+  
 }
