@@ -17,6 +17,19 @@ export class HomePage {
   toLoginPage(){
     this.navCtrl.push('LoginPage');
   }
+
+  toVendasPage(){
+    this.navCtrl.push('VendaPage');
+  }
+  toProdutosPage(){
+    this.navCtrl.push('ProdutoPage');
+  }
+  toOrcamentosPage(){
+    this.navCtrl.push('OrcamentoPage');
+  }
+  toClientesPage(){
+    this.navCtrl.push('ClientePage');
+  }
  
 
 }
