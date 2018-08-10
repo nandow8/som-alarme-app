@@ -1,17 +1,36 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="dark" hideBackButton>
+    <ion-title style="text-align: center;">Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content padding style="background-color: brown;">
+  
+  <br><br>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col id="vendas-card">
+          <ion-img class="size-buttons" src="../../assets/imgs/vendas.png"></ion-img>
+          <h4>Vendas</h4>
+      </ion-col>
+      <ion-col id="produtos-card"> 
+        <ion-img class="size-buttons" src="../../assets/imgs/produtos.png"></ion-img>
+        <h4>Produtos</h4>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-top: 10%;">
+        <ion-col id="orcamentos-card">
+            <ion-img class="size-buttons" src="../../assets/imgs/orcamentos.png"></ion-img>
+            <h4>Orçamentos</h4>
+        </ion-col>
+        <ion-col id="clientes-card">
+          <ion-img class="size-buttons" src="../../assets/imgs/clientes.png"></ion-img>
+          <h4>Clientes</h4>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  
+  <!-- <button ion-button (click)="toLoginPage()">Login Page</button> -->
 </ion-content>

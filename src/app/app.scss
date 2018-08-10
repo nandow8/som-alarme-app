@@ -33,3 +33,23 @@ font-face{
     font-family: BalooBhai;
 }
     
+
+.alertCustomCss {
+    // text color for basic alerts
+    color: white; 
+ 
+    button {
+        color: white !important; // button text color
+        background-color: color($colors, secondary, base) !important;
+            //button bg color
+    }
+
+    .alert-message {
+        color: white; // text color for confirm alerts
+    }
+
+    .alert-wrapper {
+        color: white;
+        background-color: color($colors, lightred, base); // bg color of alert content
+    }
+  }

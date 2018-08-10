@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild, Renderer, ElementRef } from '@angular/core';
+import { NavController, IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  @ViewChild('myButton', {read: ElementRef}) myButton;
+
+  constructor(public navCtrl: NavController, public renderer: Renderer) {
 
   }
+
+  toLoginPage(){
+    this.navCtrl.push('LoginPage');
+  }
+ 
 
 }

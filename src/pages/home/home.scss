@@ -1,3 +1,44 @@
 page-home {
 
+    button {
+        padding: 10px;
+        transition: 0.2s linear !important;
+    }
+
+    .size-buttons{
+        width:120px; 
+        height:120px;
+        border-radius: 9px;
+    }
+
+    #vendas-card {
+        border-radius: 9px; 
+        background-color: green;
+        color: white;
+        text-align: center;
+        margin-right: 5%;
+    }
+
+    #produtos-card {
+        border-radius: 9px; 
+        background-color: lightblue;
+        color: white;
+        text-align: center;
+    }
+
+    #orcamentos-card {
+        border-radius: 9px; 
+        background-color: gray;
+        color: white;
+        text-align: center;
+        margin-right: 5%;
+    }
+
+    #clientes-card {
+        border-radius: 9px; 
+        background-color: lightcoral;
+        color: white;
+        text-align: center;
+    }
+
 }

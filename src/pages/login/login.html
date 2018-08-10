@@ -1,0 +1,17 @@
+<ion-header no-border>
+
+  <ion-navbar transparent>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content (click)="showAlert()">
+  <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+      <!-- swiper-no-swiping nao deixa passar imagem com dedo -->
+    <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" 
+              [ngStyle]="{'background-image': 'url('+ background + ')'}">
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>
