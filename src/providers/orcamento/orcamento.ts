@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { URL_BASE } from '../../app/url_base';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the OrcamentoProvider provider.
@@ -10,8 +12,14 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class OrcamentoProvider {
 
+  public url = URL_BASE + "/orcamentos";
+
   constructor(public http: HttpClient) {
-    console.log('Hello OrcamentoProvider Provider');
+     
+  }
+
+  public listAll():Observable<any>{
+    return this.http.get(this.url);
   }
 
 }

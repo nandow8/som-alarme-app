@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { URL_BASE } from '../../app/url_base';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the ProdutoProvider provider.
@@ -10,8 +12,17 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ProdutoProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello ProdutoProvider Provider');
+  public url = URL_BASE + "/produtos";
+
+  constructor(public http: HttpClient) {}
+
+  public listAll():Observable<any>{
+    return this.http.get(this.url);
   }
+
+  public listDetails(produto_id):Observable<any>{
+    return this.http.get(this.url + "/" + produto_id)
+  }
+
 
 }

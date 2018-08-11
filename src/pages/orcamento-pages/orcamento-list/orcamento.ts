@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OrcamentoProvider } from '../../../providers/orcamento/orcamento';
 
 /**
  * Generated class for the OrcamentoPage page.
@@ -15,11 +16,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class OrcamentoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public orcamentos = [];
+
+  constructor(public orcamentoProvider: OrcamentoProvider,public navCtrl: NavController, public navParams: NavParams) {
+    this.orcamentoListAll();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OrcamentoPage');
+    
+  }
+
+  public orcamentoListAll(){
+    return this.orcamentoProvider.listAll().subscribe(response => this.orcamentos = response);
   }
 
 }

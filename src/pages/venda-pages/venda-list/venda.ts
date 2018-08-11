@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { VendaProvider } from '../../../providers/venda/venda';
 
 /**
  * Generated class for the VendaPage page.
@@ -15,11 +16,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VendaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public vendas = [];
+
+  constructor(public vendaProvider: VendaProvider,public navCtrl: NavController, public navParams: NavParams) {
+    this.vendaListAll();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad VendaPage');
+    
+  }
+
+  public vendaListAll(){
+    return this.vendaProvider.listAll().subscribe(response => this.vendas = response);
   }
 
 }

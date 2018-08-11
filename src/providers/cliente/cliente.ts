@@ -15,12 +15,15 @@ export class ClienteProvider {
   public url = URL_BASE + "/clientes";
 
   constructor(public http: HttpClient) {
-    console.log(this.url);
+    
   }
 
   public listAll():Observable<any>{
     return this.http.get(this.url);
   }
 
+  public listDetails(clientId):Observable<any>{
+    return this.http.get(this.url + "/" + clientId)
+  }
 
 }

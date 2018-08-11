@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ClienteProvider } from '../../providers/cliente/cliente';
+import { ClienteProvider } from '../../../providers/cliente/cliente';
 
 
 @IonicPage()
@@ -15,15 +15,19 @@ export class ClientePage {
 
   constructor(private clienteProvider: ClienteProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.clientesListAll();
+    
   }
 
   ionViewDidLoad() {
-    console.log(this.clientes.length );
+    
   }
 
   public clientesListAll(){
     this.clienteProvider.listAll().subscribe(response => this.clientes = response);
   }
 
+  toClienteDetails(clienteid){
+    return this.navCtrl.push('ClienteDetailsPage', {id: clienteid});
+  }
   
 }
