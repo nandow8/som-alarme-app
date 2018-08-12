@@ -29,5 +29,9 @@ export class ClientePage {
   toClienteDetails(clienteid){
     return this.navCtrl.push('ClienteDetailsPage', {id: clienteid});
   }
+ 
+  toClienteNew(){
+    return this.navCtrl.push('ClienteNewPage');
+  }
   
 }

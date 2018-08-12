@@ -26,4 +26,8 @@ export class ClienteProvider {
     return this.http.get(this.url + "/" + clientId)
   }
 
+  public save(cliente):Observable<any>{
+    return this.http.post(this.url, cliente);
+  }
+
 }
