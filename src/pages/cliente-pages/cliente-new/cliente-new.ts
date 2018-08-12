@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ClienteProvider } from '../../../providers/cliente/cliente';
+import { MessagesProvider } from '../../../providers/messages/messages';
 
 /**
  * Generated class for the ClienteNewPage page.
@@ -13,14 +14,15 @@ import { ClienteProvider } from '../../../providers/cliente/cliente';
 @Component({
   selector: 'page-cliente-new',
   templateUrl: 'cliente-new.html',
-  providers: [ClienteProvider]
+  providers: [ClienteProvider, MessagesProvider]
 })
 export class ClienteNewPage {
 
   
   public cliente = {"nome": "", "telefone": ""};
 
-  constructor(private clienteProvider: ClienteProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private messageProvider: MessagesProvider, private clienteProvider: ClienteProvider, public navCtrl: NavController, public navParams: NavParams) {
     
   }
 
@@ -30,6 +32,7 @@ export class ClienteNewPage {
 
   public clientesSave(){
     this.clienteProvider.save(this.cliente).subscribe(response => "save");
+    this.messageProvider.presentToast('Cliente cadastrado no sistema com sucesso!', 'toastSuccess');
     return this.navCtrl.push('ClientePage');
   }
 

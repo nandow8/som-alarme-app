@@ -53,3 +53,22 @@ font-face{
         background-color: color($colors, lightred, base); // bg color of alert content
     }
   }
+
+
+  .toastSuccess{
+    .toast-wrapper {
+        opacity: 0.6; 
+        border-radius: 5px !important; 
+        text-align: center; 
+        background: color($colors, secondary );
+    }
+  }
+
+  .toastDanger{
+    .toast-wrapper {
+        opacity: 0.6; 
+        border-radius: 5px !important; 
+        text-align: center; 
+        background: color($colors, danger );
+    }
+ }

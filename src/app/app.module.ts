@@ -11,6 +11,7 @@ import { ProdutoProvider } from '../providers/produto/produto';
 import { OrcamentoProvider } from '../providers/orcamento/orcamento';
 import { VendaProvider } from '../providers/venda/venda';
 import {  HttpClientModule, HttpClient } from '@angular/common/http';
+import { MessagesProvider } from '../providers/messages/messages';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {  HttpClientModule, HttpClient } from '@angular/common/http';
     ClienteProvider,
     ProdutoProvider,
     OrcamentoProvider,
-    VendaProvider
+    VendaProvider,
+    MessagesProvider
   ]
 })
 export class AppModule {}
