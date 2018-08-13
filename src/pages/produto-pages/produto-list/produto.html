@@ -15,9 +15,11 @@
 
 <ion-content padding>
 
+    
+
   <ion-list *ngFor="let produto of produtos">
     
-  <ion-card (click)="toProdutoDetails(produto.id)">
+  <ion-card (click)="openModalSaveorEdit(produto.id, produto.nome, produto.marca, produto.preco, produto.quantidade)">
       <ion-item>
         <ion-avatar item-start>
           <img src="../../../assets/imgs/bomber.jpg">

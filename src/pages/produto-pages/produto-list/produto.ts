@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { ProdutoProvider } from '../../../providers/produto/produto';
 
 
@@ -13,7 +13,8 @@ export class ProdutoPage {
 
   public produtos = [];
 
-  constructor(public produtoProvider: ProdutoProvider,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public produtoProvider: ProdutoProvider,public navCtrl: NavController, public navParams: NavParams,
+  public modal: ModalController) {
     this.produtosListAll();
   }
 
@@ -29,5 +30,23 @@ export class ProdutoPage {
     console.log(produto_id);
     return this.navCtrl.push('ProdutoDetailsPage', {id: produto_id});
   }
+ 
+
+    openModalSaveorEdit(id, nome, marca, preco, quantidade){
+      const myData = {
+        id: id,
+        nome: nome,
+        preco: preco,
+        marca: marca,
+        quantidade: quantidade
+      }
+      const myModal = this.modal.create('ProdutoSavePage', {data: myData});
+
+      myModal.onDidDismiss(() => {
+        this.produtosListAll();
+      });
+
+      myModal.present();
+    }
 
 }

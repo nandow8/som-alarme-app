@@ -24,5 +24,13 @@ export class ProdutoProvider {
     return this.http.get(this.url + "/" + produto_id)
   }
 
+  public editar(usuario):Observable<any>{
+      return this.http.put(this.url + "/" + usuario.id, usuario);
+     }
+
+     public salvar(usuario):Observable<any>{
+       return this.http.post(this.url, usuario);
+     }
+     
 
 }

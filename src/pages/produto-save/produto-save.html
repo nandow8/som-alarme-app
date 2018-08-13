@@ -1,0 +1,48 @@
+<!--
+  Generated template for the ProdutoSavePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title align="center">Salvar Produto <button small style="float: right;" ion-button (click)="closeModal()">Voltar</button></ion-title> 
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-buttons>
+    
+  </ion-buttons>
+
+  <form (ngSubmit)="saveOrUpdateForm()">
+     
+
+        <ion-item>
+          <ion-label>Nome</ion-label>
+          <ion-input type="text" [(ngModel)]="produto.nome" name="nome"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Marca</ion-label>
+          <ion-input type="text" [(ngModel)]="produto.marca" name="marca"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Preço</ion-label>
+          <ion-input type="text" [(ngModel)]="produto.preco" name="preco"></ion-input>
+        </ion-item>
+
+          <ion-item>
+            <ion-label>Quantidade</ion-label>
+            <ion-input type="text" [(ngModel)]="produto.quantidade" name="quantidade"></ion-input>
+          </ion-item>
+      
+     
+          <button ion-button type="submit" block>Salvar</button>
+            
+  </form>
+</ion-content>
